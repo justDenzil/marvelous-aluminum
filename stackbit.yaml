@@ -1,0 +1,42 @@
+stackbitVersion: ~0.3.0
+ssgName: gatsby
+nodeVersion: '12'
+publishDir: public
+pagesDir: content/blog
+models:
+  blog:
+    type: page
+    label: Blog
+    match: '**/*'
+    exclude:
+      - my-second-post/index.md
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: datetime
+        name: date
+        label: Date
+      - type: image
+        name: thumbnail
+        label: Thumbnail
+      - type: string
+        name: description
+        label: Description
+      - type: list
+        name: tags
+        label: Tags
+        items:
+          type: string
+  my_second_post:
+    type: page
+    label: My Second Post
+    folder: my-second-post
+    match: '*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: datetime
+        name: date
+        label: Date
